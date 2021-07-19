@@ -11,7 +11,7 @@
                 <img class="artist-image" :src="album.images ? album.images[1].url : null" alt=""/>
                 <p class="info2" > {{ album.name }} </p>
                 <div>
-                    <a draggable="false" class=" info3" v-for="artist in album.artists" :key="artist.id" @click="openArtist(artist)">{{ artist.name }}</a>
+                    <a draggable="false" class=" info3">{{ artist.name }}</a>
                 </div>  
                 <div class="info1">{{ album.release_date}}</div>
                 <div class="info">{{ album.total_tracks}} Tracks</div>
