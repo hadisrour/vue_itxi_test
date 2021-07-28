@@ -6,7 +6,7 @@
         <div id="desc1">
             <a class="waves-effect waves-wispy btn-flat" id="connect1" >   
                 <i class="material-icons search-icon " >search</i>          
-                <input type="text" placeholder="Search for an artist..."  v-on:click="search($event);search1();">
+                <input type="text" placeholder="Search for an artist..."  v-on:input="search($event);" @click="search1();">
                                              
             </a> 
         </div>
@@ -80,7 +80,6 @@ export default {
                 .then((response) => {
                     this.$store.commit('searchResult', response.data);
                 });
-                this.interval = setInterval(() => this.search(event), 1000);
             },
 
             search1(){
