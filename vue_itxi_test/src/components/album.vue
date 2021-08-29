@@ -8,7 +8,7 @@
         </div>
         <div class=" row albums" style="margin-left:2%; margin-top:5%; padding:0px;width:110%;height:100%;">
             <div class="album card waves-effect waves-ligh" v-for="album in albums" :key="album.id" @click="openAlbum(album)">
-                <img class="artist-image" :src="album.images ? album.images[1].url : null" alt=""/>
+                <img style="width:100% ;height:250px;" class="artist-image" :src="album.images ? album.images[1].url : null" alt=""/>
                 <p class="info2" > {{ album.name }} </p>
                 <div>
                     <a draggable="false" class=" info3">{{ artist.name }}</a>
