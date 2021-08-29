@@ -6,7 +6,7 @@
         <div id="desc1">
             <a class="waves-effect waves-wispy btn-flat" id="connect1" >   
                 <i class="material-icons search-icon " >search</i>          
-                <input type="text" placeholder="Search for an artist..."  v-on:input="search($event);" @click="search1();">
+                <input type="text" id="text1" placeholder="Search for an artist..."  v-on:input="search($event);" @click="search1();">
                                              
             </a> 
         </div>
@@ -61,7 +61,7 @@ export default {
     },
     methods: {
         search(event) {
-            
+           if(document.getElementById("text1").value.length != 0){ 
             axios
                 .get(
                     `${props.api}/search?q=${
@@ -79,7 +79,8 @@ export default {
                 )
                 .then((response) => {
                     this.$store.commit('searchResult', response.data);
-                });
+                })
+                };
             },
 
             search1(){
