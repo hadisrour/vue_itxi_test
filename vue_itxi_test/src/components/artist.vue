@@ -4,7 +4,7 @@
         <div v-if="result.artists">
             <div class="row" style="margin-left:0%; margin-top:10%; padding:20px;">
                 <div class="card waves-effect waves-light" v-for="artist in result.artists.items" :key="artist.id" style="margin-left:3%;">
-                    <img class="artist-image" :src="artist.images[1]? artist.images[1].url: 'https://i.imgur.com/o3lNa1A.png'" alt="" @click="openArtist(artist)"/>
+                    <img style="width:100% ;height:250px;" class="artist-image" :src="artist.images[1]? artist.images[1].url: 'https://i.imgur.com/o3lNa1A.png'" alt="" @click="openArtist(artist)"/>
                     <p class="name" @click="openArtist(artist)">{{ artist.name }}</p>
                     <p class="artist" @click="openArtist(artist)">{{ artist.followers ? artist.followers.total : 0 | formatter }} followers</p>
 
